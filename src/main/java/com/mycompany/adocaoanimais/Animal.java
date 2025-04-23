@@ -1,5 +1,6 @@
 package com.mycompany.adocaoanimais;
 
+//classe abstrata para instâncias animalescas
 public abstract class Animal {
     protected int id;
     protected String nome;

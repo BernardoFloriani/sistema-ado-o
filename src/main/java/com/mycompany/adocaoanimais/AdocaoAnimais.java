@@ -1,5 +1,6 @@
 package com.mycompany.adocaoanimais;
 
+import com.mycompany.adocaoanimais.exceptions.Validador;
 import java.util.Scanner;
 
 /**
@@ -12,11 +13,14 @@ public class AdocaoAnimais {
         Abrigo abrigo = new Abrigo();
 
         try {
+            // Nome do adotante
             System.out.print("Digite seu nome: ");
             String nome = sc.nextLine();
+            Validador.validarNome(nome);
 
-            System.out.print("Digite seu CPF: ");
+            System.out.print("Digite o seu CPF: ");
             String cpf = sc.nextLine();
+            Validador.validarCPF(cpf);
 
             abrigo.cadastrarAdotante(nome, cpf);
             Adotante adotante = new Adotante(nome, cpf);

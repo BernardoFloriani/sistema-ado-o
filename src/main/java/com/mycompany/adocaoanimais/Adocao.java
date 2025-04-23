@@ -1,13 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.mycompany.adocaoanimais;
 
-/**
- *
- * @author berna
- */
 import java.time.LocalDate;
 
 public class Adocao {

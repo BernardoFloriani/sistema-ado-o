@@ -1,15 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.mycompany.adocaoanimais;
 
-/**
- *
- * @author berna
- */
 import java.util.*;
 
+//classe para criação/manipulação das arrays de animais, adotantes e adoções
 public class Abrigo {
     private ArrayList<Animal> animaisDisponiveis;
     private ArrayList<Adotante> adotantes;
@@ -28,17 +21,20 @@ public class Abrigo {
         animaisDisponiveis.add(new Gato(contadorId++, "Mimi", 4));
     }
 
+    //método para cadastro de adotantes
     public void cadastrarAdotante(String nome, String cpf) throws CPFJaCadastradoException {
-        if (cpfJaCadastrado(cpf)) {
+        if (cpfJaCadastrado(cpf)) { //joga a mensagem de excessão
             throw new CPFJaCadastradoException("CPF já cadastrado.");
         }
-        adotantes.add(new Adotante(nome, cpf));
+        adotantes.add(new Adotante(nome, cpf)); //adição do novo adotante na lista
     }
 
+    //validação do CPF
     private boolean cpfJaCadastrado(String cpf) {
         return adotantes.stream().anyMatch(a -> a.getCpf().equals(cpf));
     }
 
+    //mostragem da lista de animais
     public void listarAnimaisPorTipo(String tipo) {
         for (Animal a : animaisDisponiveis) {
             if ((tipo.equalsIgnoreCase("cachorro") && a instanceof Cachorro) ||
@@ -49,6 +45,7 @@ public class Abrigo {
         }
     }
 
+    //busca de animal por ID (após a escolha do animal) retornando o mesmo
     public Animal buscarAnimalPorId(int id) {
         for (Animal a : animaisDisponiveis) {
             if (a.getId() == id) return a;
@@ -56,6 +53,7 @@ public class Abrigo {
         return null;
     }
 
+    //remove o animal da lista e adiciona na lista de adoção
     public void confirmarAdocao(Adotante adotante, Animal animal) {
         animaisDisponiveis.remove(animal);
         adocoes.add(new Adocao(adotante, animal, java.time.LocalDate.now()));

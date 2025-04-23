@@ -1,7 +1,10 @@
+com\mycompany\adocaoanimais\exceptions\CPFInvalidoException.class
 com\mycompany\adocaoanimais\Adotante.class
 com\mycompany\adocaoanimais\Cachorro.class
 com\mycompany\adocaoanimais\Animal.class
 com\mycompany\adocaoanimais\AdocaoAnimais.class
+com\mycompany\adocaoanimais\exceptions\NomeInvalidoException.class
+com\mycompany\adocaoanimais\exceptions\Validador.class
 com\mycompany\adocaoanimais\Pessoa.class
 com\mycompany\adocaoanimais\CPFJaCadastradoException.class
 com\mycompany\adocaoanimais\Gato.class
